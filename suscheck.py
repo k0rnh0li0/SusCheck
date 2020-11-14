@@ -1,5 +1,23 @@
 #!/usr/bin/env python3
 
+# This script detects the identities of impostors in
+# Among Us and outputs them for the user.
+# To use it, simply leave the script running while you
+# join games. At the start of each game, the script
+# will notify you who the impostor(s) are.
+#
+# Please note that many assumptions and guesses were
+# made while writing this. My conception of the packet
+# structure may not be fully accurate. As a result,
+# the script does not detect impostors 100% of the time.
+# It's more like 90-95%. There is room for improvement.
+#
+# Requires scapy:
+# python -m pip install scapy
+#
+# This program is Free Software, licensed under
+# GPLv3. For more information, see LICENSE.txt.
+
 from scapy.all import *
 
 INFO_HEADER = b'p\x85\xc2\xce'
@@ -95,6 +113,7 @@ if __name__ == "__main__":
     print("  ==                          ==")
     print("  ==============================\n")
 
-    print("Scanning for impostors... (CTRL+C to exit)")
+    print("Scanning for impostors...")
+    print("(CTRL+C to exit)")
 
     sniff(filter="udp", prn=process_pkt)
