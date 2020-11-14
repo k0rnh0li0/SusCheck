@@ -15,7 +15,7 @@ BTC: `3G3NwDKrN5tbULaz61GSzZXTBEj9AY3fdL`
 ### Usage
 This script is very easy to use:
 
-1. Install scrapy: `python -m pip install scrapy`
+1. Install scapy: `python -m pip install scapy`
 2. Run the script: `python suscheck.py`.
 3. Join some games.
 
