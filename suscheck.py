@@ -85,4 +85,16 @@ def process_pkt(pkt):
     print(players_string(impostors))
 
 if __name__ == "__main__":
+    print("\n  ==============================")
+    print("  ==                          ==")
+    print("  == I AM THE GREAT KORNHOLIO ==")
+    print("  ==  ARE U THREATENING ME??  ==")
+    print("  ==                          ==")
+    print("  ==         SusCheck         ==")
+    print("  ==    Impostor  Detector    ==")
+    print("  ==                          ==")
+    print("  ==============================\n")
+
+    print("Scanning for impostors... (CTRL+C to exit)")
+
     sniff(filter="udp", prn=process_pkt)
