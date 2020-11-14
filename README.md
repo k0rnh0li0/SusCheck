@@ -16,7 +16,7 @@ BTC: `3G3NwDKrN5tbULaz61GSzZXTBEj9AY3fdL`
 This script is very easy to use:
 
 1. Install scrapy: `python -m pip install scrapy`
-2. Run the script: `python suscheck.py`
+2. Run the script: `python suscheck.py`.
 3. Join some games.
 
 The script will then start sniffing packets and let you know when it smells
@@ -24,7 +24,10 @@ impostors. This is generally right when the game starts; if you start
 the script in the middle of a game, it won't detect the impostor(s)
 for that round.
 
-Note that this is not perfect and it doesn't detect impostors 100%
+**NOTE** that the script must be run as root on Linux in order to perform
+packet sniffing. Be sure to audit any script before running it as root.
+
+This is not perfect and it doesn't detect impostors 100%
 of the time. It's more like 90-95%. Improvements could be made.
 
 Feel free to report any issues.
