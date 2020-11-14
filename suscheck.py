@@ -51,6 +51,8 @@ def parse_info(pkt):
     if plist is None:
         return None
 
+    # parse name and data from each player until
+    # we have exhausted the list
     while len(plist) > 0:
         plist = plist[3:]
         pname = plist[1:plist[0] + 1].decode("ascii")
@@ -63,12 +65,13 @@ def parse_info(pkt):
 
     return players
 
-# takes a list of player tuples, and returns a list of impostor tuples
+# takes a list of player tuples, and returns a list
+# with all the non-impostor players removed
 def get_impostors(players):
     return [x for x in players if x[1][4] == 0x02]
 
-# returns a string containing player names separated by commas based
-# on a player tuple list, for pretty-printing
+# returns a comma-separated string of player names based
+# on a player tuple list
 def players_string(players):
     result = ""
     for i in range(len(players)):
@@ -77,6 +80,7 @@ def players_string(players):
             result = result + ", "
     return result
 
+# main packet handling function
 def process_pkt(pkt):
     pkt = bytes(pkt)
     players = None
