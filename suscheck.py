@@ -18,7 +18,7 @@
 # This program is Free Software, licensed under
 # GPLv3. For more information, see LICENSE.txt.
 
-from scapy.all import *
+import scapy.all
 
 INFO_HEADER = b'p\x85\xc2\xce'
 
@@ -116,4 +116,4 @@ if __name__ == "__main__":
     print("Scanning for impostors...")
     print("(CTRL+C to exit)")
 
-    sniff(filter="udp", prn=process_pkt)
+    scapy.all.sniff(filter="udp", prn=process_pkt)
