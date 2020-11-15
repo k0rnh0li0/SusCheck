@@ -2,7 +2,7 @@
 
 from scapy.all import *
 
-INFO_HEADER = b'p\x85\xc2\xce?'
+INFO_HEADER = b'p\x85\xc2\xce'
 
 # check whether the specified packet is the Info Packet
 # that we're interested in
